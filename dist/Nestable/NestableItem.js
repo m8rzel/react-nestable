@@ -113,9 +113,6 @@ var NestableItem = /** @class */ (function (_super) {
         var shouldShowIcon = shouldShowCollapseIcon
             ? shouldShowCollapseIcon(item)
             : hasChildren;
-        console.log('shouldShowIcon', shouldShowIcon);
-        console.log('hasChildren', hasChildren);
-        console.log('shouldShowCollapseIcon', shouldShowCollapseIcon(item), shouldShowCollapseIcon);
         var collapseIcon = shouldShowIcon
             ? (react_1.default.createElement("span", { onClick: handleCollapseIconClick }, renderCollapseIcon({ isCollapsed: isCollapsed, item: item })))
             : null;
@@ -142,7 +139,7 @@ var NestableItem = /** @class */ (function (_super) {
             return null;
         return (react_1.default.createElement("li", __assign({}, itemProps),
             react_1.default.createElement("div", __assign({ className: "nestable-item-name" }, rowProps), content),
-            hasChildren && !isCollapsed && (react_1.default.createElement("ol", { className: "nestable-list" }, item[childrenProp].map(function (item, i) {
+            shouldShowIcon && !isCollapsed && (react_1.default.createElement("ol", { className: "nestable-list" }, item[childrenProp].map(function (item, i) {
                 return (react_1.default.createElement(NestableItem, { key: i, index: i, depth: depth + 1, item: item, options: options, isCopy: isCopy }));
             })))));
     };

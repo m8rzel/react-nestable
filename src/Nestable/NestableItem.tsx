@@ -92,9 +92,7 @@ class NestableItem extends PureComponent<NestableItemProps> {
     const shouldShowIcon = shouldShowCollapseIcon 
       ? shouldShowCollapseIcon(item)
       : hasChildren;
-    console.log('shouldShowIcon', shouldShowIcon);
-    console.log('hasChildren', hasChildren);
-    console.log('shouldShowCollapseIcon', shouldShowCollapseIcon(item), shouldShowCollapseIcon);
+
     const collapseIcon = shouldShowIcon
       ? (
         <span onClick={handleCollapseIconClick}>
@@ -135,7 +133,7 @@ class NestableItem extends PureComponent<NestableItemProps> {
           {content}
         </div>
 
-        {hasChildren && !isCollapsed && (
+        {shouldShowIcon && !isCollapsed && (
           <ol className="nestable-list">
             {(item[childrenProp] as Item[]).map((item, i) => {
               return (
