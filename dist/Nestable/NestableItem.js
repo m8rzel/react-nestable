@@ -76,7 +76,7 @@ var NestableItem = /** @class */ (function (_super) {
     NestableItem.prototype.render = function () {
         var _a;
         var _b = this.props, item = _b.item, isCopy = _b.isCopy, options = _b.options, index = _b.index, depth = _b.depth;
-        var dragItem = options.dragItem, renderItem = options.renderItem, handler = options.handler, disableCollapse = options.disableCollapse, disableDrag = options.disableDrag, idProp = options.idProp, childrenProp = options.childrenProp, checkIfCollapsed = options.checkIfCollapsed, _c = options.renderCollapseIcon, renderCollapseIcon = _c === void 0 ? this.renderCollapseIcon : _c, _d = options.shouldShowCollapseIcon, shouldShowCollapseIcon = _d === void 0 ? function () { return false; } : _d;
+        var dragItem = options.dragItem, renderItem = options.renderItem, handler = options.handler, disableCollapse = options.disableCollapse, disableDrag = options.disableDrag, idProp = options.idProp, childrenProp = options.childrenProp, checkIfCollapsed = options.checkIfCollapsed, _c = options.renderCollapseIcon, renderCollapseIcon = _c === void 0 ? this.renderCollapseIcon : _c, shouldShowCollapseIcon = options.shouldShowCollapseIcon;
         var isCollapsed = checkIfCollapsed(item);
         var isDragging = !isCopy && dragItem && dragItem[idProp] === item[idProp];
         var hasChildren = item[childrenProp] && item[childrenProp].length > 0;
@@ -110,7 +110,9 @@ var NestableItem = /** @class */ (function (_super) {
         var handleCollapseIconClick = disableCollapse
             ? undefined :
             function () { return options.onToggleCollapse(item); };
-        var shouldShowIcon = shouldShowCollapseIcon(item) || hasChildren;
+        var shouldShowIcon = shouldShowCollapseIcon
+            ? shouldShowCollapseIcon(item)
+            : hasChildren;
         var collapseIcon = shouldShowIcon
             ? (react_1.default.createElement("span", { onClick: handleCollapseIconClick }, renderCollapseIcon({ isCollapsed: isCollapsed, item: item })))
             : null;
