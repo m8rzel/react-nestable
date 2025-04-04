@@ -126,7 +126,7 @@ class Example extends Component {
           disableCollapse={!isCollapsingAllowed}
           disableDrag={!isDraggingAllowed}
           renderItem={this.renderItem}
-          ref={el => this.refNestable = el}
+          ref={el => { this.refNestable = el; }}
         />
 
         <br/>

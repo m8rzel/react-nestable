@@ -24,10 +24,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@types/react": "^18.2.20",
+    "@types/react": "^19.0.0",
     "@types/react-addons-shallow-compare": "^0.14.22",
     "@types/react-addons-update": "^0.14.21",
-    "@types/react-dom": "^18.2.7",
+    "@types/react-dom": "^19.0.0",
     "@typescript-eslint/parser": "^6.6.0",
     "cpy": "^10.1.0",
     "cpy-cli": "^5.0.0",
@@ -60,10 +60,10 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "react": "^18.2.0",
+    "react": "^19.0.0",
     "react-addons-shallow-compare": "^15.6.3",
     "react-addons-update": "^15.6.3",
-    "react-dom": "^18.2.0"
+    "react-dom": "^19.0.0"
   },
   "repository": {
     "type": "git",
