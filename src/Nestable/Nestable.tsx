@@ -407,6 +407,7 @@ class Nestable extends Component<NestableProps, NestableState> {
       disableDrag,
       idProp,
       childrenProp,
+      shouldShowCollapseIcon,
     } = this.props;
     const { dragItem } = this.state;
 
@@ -418,6 +419,7 @@ class Nestable extends Component<NestableProps, NestableState> {
       disableDrag,
       renderItem,
       renderCollapseIcon,
+      shouldShowCollapseIcon,
       handler,
 
       checkIfCollapsed: this.checkIfCollapsed,

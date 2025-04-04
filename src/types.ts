@@ -20,6 +20,7 @@ export interface NestableProps {
   onDragEnd?: OnDragEnd;
   onDragStart?: OnDragStart;
   renderCollapseIcon?: RenderCollapseIcon;
+  shouldShowCollapseIcon?: (item: Item) => boolean;
   renderItem?: RenderItem;
   threshold?: number;
 }
@@ -115,6 +116,7 @@ export interface NestableItemOptions {
   disableDrag: NestableProps['disableDrag'];
   renderItem: NestableProps['renderItem'];
   renderCollapseIcon: NestableProps['renderCollapseIcon'];
+  shouldShowCollapseIcon: NestableProps['shouldShowCollapseIcon'];
   handler: NestableProps['handler'];
 
   checkIfCollapsed: (item: Item) => boolean;

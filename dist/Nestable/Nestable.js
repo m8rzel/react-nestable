@@ -479,7 +479,7 @@ var Nestable = /** @class */ (function (_super) {
         return nextPath;
     };
     Nestable.prototype.getItemOptions = function () {
-        var _a = this.props, renderItem = _a.renderItem, renderCollapseIcon = _a.renderCollapseIcon, handler = _a.handler, disableCollapse = _a.disableCollapse, disableDrag = _a.disableDrag, idProp = _a.idProp, childrenProp = _a.childrenProp;
+        var _a = this.props, renderItem = _a.renderItem, renderCollapseIcon = _a.renderCollapseIcon, handler = _a.handler, disableCollapse = _a.disableCollapse, disableDrag = _a.disableDrag, idProp = _a.idProp, childrenProp = _a.childrenProp, shouldShowCollapseIcon = _a.shouldShowCollapseIcon;
         var dragItem = this.state.dragItem;
         return {
             dragItem: dragItem,
@@ -489,6 +489,7 @@ var Nestable = /** @class */ (function (_super) {
             disableDrag: disableDrag,
             renderItem: renderItem,
             renderCollapseIcon: renderCollapseIcon,
+            shouldShowCollapseIcon: shouldShowCollapseIcon,
             handler: handler,
             checkIfCollapsed: this.checkIfCollapsed,
             onDragStart: this.onDragStart,
