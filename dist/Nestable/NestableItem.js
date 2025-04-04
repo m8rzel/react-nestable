@@ -110,7 +110,7 @@ var NestableItem = /** @class */ (function (_super) {
         var handleCollapseIconClick = disableCollapse
             ? undefined :
             function () { return options.onToggleCollapse(item); };
-        var shouldShowIcon = options.shouldShowCollapseIcon ? options.shouldShowCollapseIcon(item) : hasChildren;
+        var shouldShowIcon = options.shouldShowCollapseIcon(item) || hasChildren;
         var collapseIcon = shouldShowIcon
             ? (react_1.default.createElement("span", { onClick: handleCollapseIconClick }, renderCollapseIcon({ isCollapsed: isCollapsed, item: item })))
             : null;
