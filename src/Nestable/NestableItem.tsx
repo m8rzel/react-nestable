@@ -40,6 +40,7 @@ class NestableItem extends PureComponent<NestableItemProps> {
       childrenProp,
       checkIfCollapsed,
       renderCollapseIcon = this.renderCollapseIcon,
+      shouldShowCollapseIcon = () => false,
     } = options;
 
     const isCollapsed = checkIfCollapsed(item);
@@ -88,7 +89,7 @@ class NestableItem extends PureComponent<NestableItemProps> {
       ? undefined :
       () => options.onToggleCollapse(item);
 
-    const shouldShowIcon = options.shouldShowCollapseIcon(item) || hasChildren;
+    const shouldShowIcon = shouldShowCollapseIcon(item) || hasChildren;
     const collapseIcon = shouldShowIcon
       ? (
         <span onClick={handleCollapseIconClick}>
